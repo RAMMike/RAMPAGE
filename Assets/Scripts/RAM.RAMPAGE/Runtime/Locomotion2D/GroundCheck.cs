@@ -17,20 +17,14 @@ namespace RAM.RAMPAGE.Runtime.Locomotion
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if ((((1 << other.gameObject.layer) & settings.LayerMask) != 0) && !Colliders.Contains(other))
+            if (((1 << other.gameObject.layer) & settings.LayerMask) != 0 && !Colliders.Contains(other))
                 Colliders.Add(other);
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if ((((1 << other.gameObject.layer) & settings.LayerMask) != 0) && Colliders.Contains(other))
+            if (((1 << other.gameObject.layer) & settings.LayerMask) != 0 && Colliders.Contains(other))
                 Colliders.Remove(other);
-        }
-
-        private void Update()
-        {
-            print($"Grounded: {Grounded}");
-            
         }
 
         #if UNITY_EDITOR

@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &663199933340525870
 Transform:
@@ -43,8 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af34ab53f2b54a42be0da7e1befb79a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settings:
-    _inputMap: {fileID: 11400000, guid: e95c32abf3790b54dab70b603281377a, type: 2}
-    _moeSpawner: {fileID: 0}
-    _moePawn: {fileID: 2109718105702585658, guid: fc134145acccf9548a054f2c975b807e,
-      type: 3}
+  _settings: {fileID: 11400000, guid: 95ae9cabbb3ea654e84335446a3cedf3, type: 2}

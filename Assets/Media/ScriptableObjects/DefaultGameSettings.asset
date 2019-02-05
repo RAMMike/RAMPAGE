@@ -19,5 +19,5 @@ MonoBehaviour:
     _key_jump: 32
     _key_Shoot: 122
   _playerMovement:
-    _moveVelocity: 20
-    _jumpForce: 10
+    _moveVelocity: 5
+    _jumpForce: 4
