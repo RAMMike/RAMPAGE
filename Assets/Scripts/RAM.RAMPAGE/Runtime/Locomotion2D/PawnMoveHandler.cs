@@ -24,7 +24,7 @@ namespace RAM.RAMPAGE.Runtime.Locomotion
 
 		public void FixedTick()
 		{
-			if (_input.IsJumping)
+			if (_input.IsJumping && _pawn.Grounded)
 				_pawn.AddForce(_settings.JumpForce * Vector2.up, ForceMode2D.Impulse);
 			
 			if (_input.IsMovingRight)

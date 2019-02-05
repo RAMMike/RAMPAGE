@@ -3,6 +3,7 @@ using RAM.RAMPAGE.Runtime.Game;
 using RAM.RAMPAGE.Runtime.Validation;
 using UnityEditor;
 using static  UnityEngine.Debug;
+using static  UnityEngine.Assertions.Assert;
 
 namespace RAM.RAMPAGE.RAM.RAMPAGE.Editor.Validation
 {
@@ -11,8 +12,8 @@ namespace RAM.RAMPAGE.RAM.RAMPAGE.Editor.Validation
 		[MenuItem(itemName: "RAMPAGE/Validate Scene %&v")]
 		private static void Validate()
 		{
-			bool raiseExceptions = UnityEngine.Assertions.Assert.raiseExceptions;
-			UnityEngine.Assertions.Assert.raiseExceptions = true;
+			bool rExceptions = raiseExceptions;
+			raiseExceptions = true;
 
 			try
 			{
@@ -22,7 +23,7 @@ namespace RAM.RAMPAGE.RAM.RAMPAGE.Editor.Validation
 			
 			finally
 			{
-				UnityEngine.Assertions.Assert.raiseExceptions = raiseExceptions;
+				raiseExceptions = rExceptions;
 			}
 			
 			Log("<color=green>Scene validated successfully.</color>");
@@ -31,8 +32,8 @@ namespace RAM.RAMPAGE.RAM.RAMPAGE.Editor.Validation
 		[MenuItem(itemName: "RAMPAGE/Validate and Run %&r")]
 		private static void ValidateAndRun()
 		{
-			bool raiseExceptions = UnityEngine.Assertions.Assert.raiseExceptions;
-			UnityEngine.Assertions.Assert.raiseExceptions = true;
+			bool rExceptions = raiseExceptions;
+			raiseExceptions = true;
 			
 			try
 			{
@@ -45,7 +46,7 @@ namespace RAM.RAMPAGE.RAM.RAMPAGE.Editor.Validation
 			}
 			finally
 			{
-				UnityEngine.Assertions.Assert.raiseExceptions = raiseExceptions;
+				raiseExceptions = rExceptions;
 			}
 			
 			EditorApplication.isPlaying = true;

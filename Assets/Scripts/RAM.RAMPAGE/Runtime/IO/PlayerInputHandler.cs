@@ -21,7 +21,7 @@ namespace RAM.RAMPAGE.Runtime.IO
 
 		public void Tick()
 		{
-			_inputState.IsJumping = GetAxis(_settings.Axis_Jump) > 0 || GetKey(_settings.Key_Jump);
+			_inputState.IsJumping = GetKeyDown(_settings.Key_Jump); // || GetAxis(_settings.Axis_Jump) > 0;
 			_inputState.IsShooting = GetAxis(_settings.Axis_Shoot) > 0 || GetKey(_settings.Key_Shoot);
 		}
 

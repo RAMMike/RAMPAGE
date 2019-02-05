@@ -1,7 +1,9 @@
  // Copyright © 2019 Royal Alberta Museum
  
 using System;
+#if PROCAMERA2D
 using Com.LuisPedroFonseca.ProCamera2D;
+#endif
 using RAM.RAMPAGE.Runtime.Pawns;
 using RAM.RAMPAGE.Runtime.Spawning;
 using RAM.RAMPAGE.Runtime.Validation;
