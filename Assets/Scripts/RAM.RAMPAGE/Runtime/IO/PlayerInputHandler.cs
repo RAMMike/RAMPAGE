@@ -1,4 +1,7 @@
 // Copyright © 2019 Royal Alberta Museum
+
+using System;
+using UnityEngine;
 using static UnityEngine.Input;
 
 namespace RAM.RAMPAGE.Runtime.IO
@@ -7,19 +10,39 @@ namespace RAM.RAMPAGE.Runtime.IO
 	{
 
 		private readonly InputState _inputState;
-		private readonly InputMap _map;
+		private readonly Settings _settings;
 
-		public PlayerInputHandler(InputState inputState, InputMap map)
+		public PlayerInputHandler(InputState inputState, Settings settings)
 		{
 			_inputState = inputState;
-			_map = map;
+			_settings = settings;
 			_inputState.IsMovingRight = true;
 		}
 
 		public void Tick()
 		{
-			_inputState.IsJumping = GetAxis(_map.Axis_Jump) > 0 || GetKey(_map.Key_Jump);
-			_inputState.IsShooting = GetAxis(_map.Axis_Shoot) > 0 || GetKey(_map.Key_Shoot);
+			_inputState.IsJumping = GetAxis(_settings.Axis_Jump) > 0 || GetKey(_settings.Key_Jump);
+			_inputState.IsShooting = GetAxis(_settings.Axis_Shoot) > 0 || GetKey(_settings.Key_Shoot);
+		}
+
+		[Serializable]
+		public class Settings
+		{
+			[SerializeField]
+			private string _axis_Jump = "Jump";
+			public string Axis_Jump => _axis_Jump;
+		
+			[SerializeField]
+			private string _axis_Shoot = "Shoot";
+			public string Axis_Shoot => _axis_Shoot;
+
+			[SerializeField]
+			private KeyCode _key_jump = KeyCode.Space;
+			public KeyCode Key_Jump => _key_jump;
+
+			[SerializeField]
+			private KeyCode _key_Shoot = KeyCode.Z;
+			public KeyCode Key_Shoot => _key_Shoot;	
 		}
 	}
 }

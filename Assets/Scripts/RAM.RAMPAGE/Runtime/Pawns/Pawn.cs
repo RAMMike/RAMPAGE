@@ -40,10 +40,10 @@ namespace RAM.RAMPAGE.Runtime.Pawns
 
 		public void AddForce(Vector2 value, ForceMode2D forceMode2D) { Rigidbody2D.AddForce(value, forceMode2D); }
 		 
-		public void Init(InputMap map, PawnMoveHandler.Settings moveSettings)
+		public void Init(PlayerInputHandler.Settings settings, PawnMoveHandler.Settings moveSettings)
 		{
 			InputState state = new InputState();
-			_playerInput = new PlayerInputHandler(state, map);
+			_playerInput = new PlayerInputHandler(state, settings);
 			_moveHandler = new PawnMoveHandler(this, state, moveSettings);
 
 		}
